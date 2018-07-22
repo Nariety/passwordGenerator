@@ -22,7 +22,7 @@ public class NameBase {
         nonAlphaListLen = nonAlphaList.size();
     }
 
-    // ================================== Singleton =======================================
+    // ================================== Singleton ========================================
     // static variable single_instance of type Singleton
     private static NameBase single_instance = null;
     // static method to create instance of Singleton class
@@ -34,9 +34,9 @@ public class NameBase {
 
         return single_instance;
     }
-    // ====================================================================================
-    // ================================ Helper functions ===================================
+    // =====================================================================================
 
+    // ================================ Helper functions ===================================
     public String getRandomName(){
         int randomNum = ThreadLocalRandom.current().nextInt(0, namelistLen);
         return nameList.get(randomNum);
@@ -49,15 +49,15 @@ public class NameBase {
 
     private void loadFromTXT () throws IOException {
         HashSet<String> nameSet = new HashSet<>();
-        File dir = new File("resources/txt/");
+        File dir = new File("/setupFiles/");
         File[] foundFiles = dir.listFiles(new FilenameFilter() {
-            public boolean accept(File dir, String name) {
-                return name.endsWith(".txt");
-            }
+            public boolean accept(File dir, String name) { return name.endsWith(".txt"); }
         });
         for (File file : foundFiles) {
             System.out.println(file.getPath());
             BufferedReader br = new BufferedReader(new FileReader(file.getPath()));
+//        System.out.println(new File("text.txt").getAbsolutePath());
+//            BufferedReader br = new BufferedReader(new FileReader("text.txt"));
             try {
                 String line = br.readLine();
                 while (line != null) {
@@ -81,8 +81,7 @@ public class NameBase {
             nameList.add(currString);
             simpleQuery("INSERT INTO names VALUES (?)", currString);
         }
-        System.out.println("Name List Length: " + namelistLen);
-        System.out.println("txt files loaded.");
+        System.out.println("data loaded from txt.");
     }
 
     public void loadFromDB(){
@@ -105,7 +104,7 @@ public class NameBase {
                 currString = (String)setIterator.next();
                 nameList.add(currString);
             }
-            System.out.println("txt files loaded.");
+            System.out.println("data loaded from DB.");
         } catch(SQLException e){
             System.out.println("Failed to load nodes to classes");
             e.printStackTrace();
