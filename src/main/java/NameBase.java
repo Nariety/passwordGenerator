@@ -49,7 +49,7 @@ public class NameBase {
 
     private void loadFromTXT () throws IOException {
         HashSet<String> nameSet = new HashSet<>();
-        File dir = new File("/setupFiles/");
+        File dir = new File("src/main/resources/setupFiles/");
         File[] foundFiles = dir.listFiles(new FilenameFilter() {
             public boolean accept(File dir, String name) { return name.endsWith(".txt"); }
         });
