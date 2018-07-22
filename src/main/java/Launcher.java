@@ -10,7 +10,7 @@ public class Launcher extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("HPOG.fxml"));
         primaryStage.setTitle("Password Generator");
-        primaryStage.setScene(new Scene(root, 500, 400));
+        primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }
 

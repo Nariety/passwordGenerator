@@ -49,7 +49,7 @@ public class NameBase {
 
     private void loadFromTXT () throws IOException {
         HashSet<String> nameSet = new HashSet<>();
-        File dir = new File("src/main/resources/setupFiles/");
+        File dir = new File("setupFiles/");
         File[] foundFiles = dir.listFiles(new FilenameFilter() {
             public boolean accept(File dir, String name) { return name.endsWith(".txt"); }
         });
@@ -106,7 +106,7 @@ public class NameBase {
             }
             System.out.println("data loaded from DB.");
         } catch(SQLException e){
-            System.out.println("Failed to load nodes to classes");
+            System.out.println("Failed to load names to classes");
             e.printStackTrace();
         }
     }
@@ -114,6 +114,7 @@ public class NameBase {
     public void ReloadDB(){
         dropTables();
         try {
+            createTables();
             loadFromTXT();
             System.out.println("Reload successful");
         } catch (IOException e) {
