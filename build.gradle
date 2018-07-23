@@ -26,3 +26,9 @@ task run(type: JavaExec) {
     main = 'Launcher'
     classpath = sourceSets.main.runtimeClasspath
 }
+
+task zip(type: Zip) {
+    from jar.outputs.files
+    from('src/main/resources/zipResources/')
+    from('README.txt')
+}
