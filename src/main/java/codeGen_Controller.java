@@ -22,8 +22,8 @@ public class codeGen_Controller implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        .setItems(FXCollections.observableArrayList(
-        cb_passwordLen.getItems().addAll("LOW", "MEDIUM","HIGH", "SUPER", "CRAZY");
-        cb_passwordLen.setValue("HIGH");
+        cb_passwordLen.getItems().addAll("SHORT", "MEDIUM","LONG", "SUPER", "CRAZY");
+        cb_passwordLen.setValue("LONG");
     }
 
     /**
