@@ -8,7 +8,7 @@ This is what drove me to write a password generator. You can customize the words
 that the generator will use so it's easier for you to memorize and it's also more 
 secured.
 
-#### How to use
+### How to use
 <!--1. Download the _zip_ file to where you want the generator to be.
 2. Extract the _zip_ file.-->
 * The program will load _*.txt_ files from the _setupFiles_ folder. If you haven't modified the _setupFiles_ folder, 
@@ -27,7 +27,7 @@ start up.
 characters out when parsing the files. 
 * Currently only support _.txt_ files for password database customization.
 
-#### Features
+### Features
 * Customizable database which the passwords are generated from
 * Customizable password length
 
