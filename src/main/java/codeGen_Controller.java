@@ -39,13 +39,13 @@ public class codeGen_Controller implements Initializable{
         // Hitting the generate button
         else if(e.getSource() == btn_generate){
             String passwordLen = cb_passwordLen.getValue();
-            if(passwordLen.equals("LOW")){
+            if(passwordLen.equals("SHORT")){
                 Generator.getInstance().setPasswordLen(0);
             }
             else if(passwordLen.equals("MEDIUM")){
                 Generator.getInstance().setPasswordLen(1);
             }
-            else if(passwordLen.equals("HIGH")){
+            else if(passwordLen.equals("LONG")){
                 Generator.getInstance().setPasswordLen(2);
             }
             else if(passwordLen.equals("SUPER")){
