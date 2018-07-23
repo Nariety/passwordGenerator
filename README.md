@@ -9,13 +9,12 @@ that the generator will use so it's easier for you to memorize and it's also mor
 secured.
 
 ### How to use
-<!--1. Download the _zip_ file to where you want the generator to be.
-2. Extract the _zip_ file.-->
 * The program will load _*.txt_ files from the _setupFiles_ folder. If you haven't modified the _setupFiles_ folder, 
 by default the program will generate passwords based on the content of the _basic.txt_, which contains the lyrics of 
 a song.
 * If you want to generate passwords with your own phrases, be sure to add or replace the txt files in the _setupFiles_ 
 folder. Then when running the program, click the _Reload txt Files_ button to update the database.
+
 ###### What should I put in the txt files?
 Some might say "This does make it easy to generate a password, but I still have to memorize it". That depends on the data 
 provided in the setupFiles. You can put in words that relate to each other and contents that you are familiar with, 
