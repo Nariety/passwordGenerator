@@ -17,11 +17,13 @@ public class codeGen_Controller implements Initializable{
     @FXML
     private Label lbl_output;
     @FXML
-    private ChoiceBox cb_passwordLen;
+    private ChoiceBox<String> cb_passwordLen;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        cb_passwordLen  = new ChoiceBox(FXCollections.observableArrayList("LOW", "MEDIUM","HIGH", "SUPER", "CRAZY"));
+//        .setItems(FXCollections.observableArrayList(
+        cb_passwordLen.getItems().addAll("LOW", "MEDIUM","HIGH", "SUPER", "CRAZY");
+        cb_passwordLen.setValue("HIGH");
     }
 
     /**
@@ -36,8 +38,7 @@ public class codeGen_Controller implements Initializable{
         }
         // Hitting the generate button
         else if(e.getSource() == btn_generate){
-            String passwordLen = (String)cb_passwordLen.getValue();
-            System.out.println("Password Len is :" + passwordLen);
+            String passwordLen = cb_passwordLen.getValue();
             if(passwordLen.equals("LOW")){
                 Generator.getInstance().setPasswordLen(0);
             }

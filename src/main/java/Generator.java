@@ -3,7 +3,6 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Generator {
-
     private enum PasswordLength {SHORT,MEDIUM, LONG,SUPER,CRAZY}
     private static PasswordLength passwordLength;
     private static final int lowLen = 5, mediumLen = 10, highLen = 15, superLen = 20, crazyLen = 25;

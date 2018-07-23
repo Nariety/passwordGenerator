@@ -2,9 +2,10 @@ group 'PG'
 version '1.0'
 
 apply plugin: 'java'
-apply plugin: 'application'
+apply plugin: 'idea'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -14,15 +15,14 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'org.apache.derby', name: 'derby', version: '10.14.1.0'
 }
-mainClassName = 'Main'
 jar {
     manifest {
-        attributes 'Main-Class': 'Main'
+        attributes 'Main-Class': 'Launcher'
     }
     from configurations.runtime.collect { zipTree(it) }
 }
 
-//run(type: JavaExec) {
-//    main = 'Main'
-//    classpath = sourceSets.main.runtimeClasspath
-//}
+task run(type: JavaExec) {
+    main = 'Launcher'
+    classpath = sourceSets.main.runtimeClasspath
+}
