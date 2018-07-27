@@ -24,24 +24,39 @@ public class Generator {
         setPasswordLen(1);
     }
 
-    public String generateCode(){
+    public String generateCode(String leadingCharacters){
+        // leading characters option
+        boolean leadingCharHuh = true;
+        if(leadingCharacters.equals("(Optional)") || leadingCharacters.equals("")){
+            leadingCharHuh = false;
+        }
+        // set up initial values
         int lenDiff,codeLen;
         String code;
         List<String> codeList = new LinkedList<>();
+
         code = NameBase.getInstance().getRandomName();
+        // if needed, find a word that satisfies the leading character requirement first
+        while(leadingCharHuh){
+            if(code.substring(0,leadingCharacters.length()).equals(leadingCharacters)) leadingCharHuh = false;
+            else code = NameBase.getInstance().getRandomName();
+        }
+        // add the first word to list
         codeList.add(code);
         codeLen = code.length();
-
+        // loop until less than three characters are needed to fulfill the length requirement
         while((lenDiff = moreHuh(codeLen)) > 3){
             code = NameBase.getInstance().getRandomName();
             codeLen += code.length();
             codeList.add(code);
         }
+        // if needed, add non-alphanumeric characters until fulfilling the length requirement
         while(lenDiff > 0){
             int randomNum = ThreadLocalRandom.current().nextInt(0,codeList.size());
             codeList.set(randomNum ,codeList.get(randomNum)+ NameBase.getInstance().getRandomNonAlphabet());
             lenDiff --;
         }
+        // build the output back
         code = "";
         for (String aString : codeList){ code += aString; }
         return code;

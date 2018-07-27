@@ -17,11 +17,12 @@ public class codeGen_Controller implements Initializable{
     @FXML
     private Label lbl_output;
     @FXML
+    private Label lbl_leadingChar;
+    @FXML
     private ChoiceBox<String> cb_passwordLen;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        .setItems(FXCollections.observableArrayList(
         cb_passwordLen.getItems().addAll("SHORT", "MEDIUM","LONG", "SUPER", "CRAZY");
         cb_passwordLen.setValue("LONG");
     }
@@ -54,7 +55,9 @@ public class codeGen_Controller implements Initializable{
             else {
                 Generator.getInstance().setPasswordLen(4);
             }
-            lbl_output.setText(Generator.getInstance().generateCode());
+            // leading character option
+            String leadingCharacters = lbl_leadingChar.getText();
+            lbl_output.setText(Generator.getInstance().generateCode(leadingCharacters));
         }
     }
 }

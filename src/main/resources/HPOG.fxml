@@ -3,16 +3,19 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codeGen_Controller">
    <children>
-      <ChoiceBox fx:id="cb_passwordLen" layoutX="326.0" layoutY="209.0" prefHeight="43.0" prefWidth="100.0" stylesheets="@css/choiceBox.css" />
-      <Label alignment="CENTER" layoutX="173.0" layoutY="209.0" prefHeight="43.0" prefWidth="134.0" stylesheets="@css/label.css" text="Password Length :" />
+      <ChoiceBox fx:id="cb_passwordLen" layoutX="430.0" layoutY="118.0" prefHeight="43.0" prefWidth="100.0" stylesheets="@css/choiceBox.css" />
+      <Label alignment="CENTER" layoutX="268.0" layoutY="118.0" prefHeight="43.0" prefWidth="134.0" stylesheets="@css/label.css" text="Password Length :" />
       <Label fx:id="lbl_output" alignment="CENTER" layoutX="35.0" layoutY="330.0" prefHeight="43.0" prefWidth="531.0" stylesheets="@css/label.css" />
-      <Button fx:id="btn_reloadtxt" layoutX="225.0" layoutY="106.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="43.0" prefWidth="151.0" styleClass="jfx-button" stylesheets="@css/mediumButtons.css" text="Reload txt Files" />
-      <Button fx:id="btn_generate" layoutX="207.0" layoutY="272.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="39.0" prefWidth="186.0" styleClass="jfx-button" stylesheets="@css/mediumButtons.css" text="Generate Password" />
-      <Label layoutX="163.0" layoutY="157.0" stylesheets="@css/warningLabel.css" text="Note: You only need to reload if you changed your txt files." />
+      <Button fx:id="btn_reloadtxt" layoutX="85.0" layoutY="105.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="72.0" prefWidth="92.0" styleClass="jfx-button" stylesheets="@css/mediumButtons.css" text="Reload txt Files" wrapText="true" />
+      <Button fx:id="btn_generate" layoutX="318.0" layoutY="251.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="43.0" prefWidth="184.0" styleClass="jfx-button" stylesheets="@css/mediumButtons.css" text="Generate Password" wrapText="true" />
+      <Label layoutX="81.0" layoutY="195.0" prefHeight="88.0" prefWidth="100.0" stylesheets="@css/warningLabel.css" text="Note: You only need to reload if you changed your txt files." wrapText="true" />
       <Label alignment="CENTER" layoutX="121.0" layoutY="24.0" prefHeight="43.0" prefWidth="359.0" stylesheets="@css/titleLabel.css" text="Password Generator" />
+      <Label alignment="CENTER" layoutX="256.0" layoutY="179.0" prefHeight="43.0" prefWidth="146.0" stylesheets="@css/label.css" text="Leading Character(s) :" />
+      <TextField fx:id="lbl_leadingChar" alignment="CENTER" layoutX="431.0" layoutY="179.0" prefHeight="43.0" prefWidth="100.0" promptText="(Optional)" styleClass="label" stylesheets="@css/label.css" />
    </children>
 </AnchorPane>
