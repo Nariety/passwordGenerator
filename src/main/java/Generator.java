@@ -38,7 +38,7 @@ public class Generator {
         code = NameBase.getInstance().getRandomName();
         // if needed, find a word that satisfies the leading character requirement first
         while(leadingCharHuh){
-            if(code.substring(0,leadingCharacters.length()).equals(leadingCharacters)) leadingCharHuh = false;
+            if(code.length() >= leadingCharacters.length() && code.substring(0,leadingCharacters.length()).equals(leadingCharacters)) leadingCharHuh = false;
             else code = NameBase.getInstance().getRandomName();
         }
         // add the first word to list

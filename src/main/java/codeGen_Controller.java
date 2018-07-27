@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,7 +18,7 @@ public class codeGen_Controller implements Initializable{
     @FXML
     private Label lbl_output;
     @FXML
-    private Label lbl_leadingChar;
+    private TextField txtF_leadingChar;
     @FXML
     private ChoiceBox<String> cb_passwordLen;
 
@@ -56,7 +57,7 @@ public class codeGen_Controller implements Initializable{
                 Generator.getInstance().setPasswordLen(4);
             }
             // leading character option
-            String leadingCharacters = lbl_leadingChar.getText();
+            String leadingCharacters = txtF_leadingChar.getText();
             lbl_output.setText(Generator.getInstance().generateCode(leadingCharacters));
         }
     }

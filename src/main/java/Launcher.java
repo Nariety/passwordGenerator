@@ -17,7 +17,6 @@ public class Launcher extends Application {
     public static void main(String[] args) {
         NameBase.getInstance().initDatabase();
         Generator.getInstance().setPasswordLen(4);
-        System.out.println(Generator.getInstance().generateCode());
         launch(args);
     }
 }
