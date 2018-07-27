@@ -22,8 +22,8 @@ public class codeGen_Controller implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        .setItems(FXCollections.observableArrayList(
-        cb_passwordLen.getItems().addAll("LOW", "MEDIUM","HIGH", "SUPER", "CRAZY");
-        cb_passwordLen.setValue("HIGH");
+        cb_passwordLen.getItems().addAll("SHORT", "MEDIUM","LONG", "SUPER", "CRAZY");
+        cb_passwordLen.setValue("LONG");
     }
 
     /**
@@ -39,13 +39,13 @@ public class codeGen_Controller implements Initializable{
         // Hitting the generate button
         else if(e.getSource() == btn_generate){
             String passwordLen = cb_passwordLen.getValue();
-            if(passwordLen.equals("LOW")){
+            if(passwordLen.equals("SHORT")){
                 Generator.getInstance().setPasswordLen(0);
             }
             else if(passwordLen.equals("MEDIUM")){
                 Generator.getInstance().setPasswordLen(1);
             }
-            else if(passwordLen.equals("HIGH")){
+            else if(passwordLen.equals("LONG")){
                 Generator.getInstance().setPasswordLen(2);
             }
             else if(passwordLen.equals("SUPER")){
