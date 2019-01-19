@@ -19,7 +19,7 @@ folder. Then when running the program, click the _Reload txt Files_ button to up
 Some might say "This does make it easy to generate a password, but I still have to memorize it". That depends on the data 
 provided in the setupFiles. You can put in words that relate to each other and contents that you are familiar with, 
 such as lyrics of a song, words of your favorite books, characters in your favorite books, your favorite movie titles... 
-There are so much more possibilities.
+There are so many more possibilities.
  
 **_Note:_** 
 * The _.jar_ file should run on its own if you already have Java 8 installed.
